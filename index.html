@@ -1,182 +1,171 @@
 <!DOCTYPE html>
 <html lang="de">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Damla Olivenöl</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Inter', sans-serif;
-            background-color: #fefcf6;
-            color: #1a2e1a;
-        }
-
-        header {
-            background-color: #f0e9d6;
-            padding: 20px 0;
-            text-align: center;
-        }
-
-        header img {
-            height: 60px;
-        }
-
-        h1 {
-            margin: 10px 0 0;
-            font-size: 24px;
-            font-weight: 700;
-            color: #2f462f;
-        }
-
-        .lang-select {
-            margin-top: 10px;
-        }
-
-        select {
-            padding: 5px 10px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-            background-color: #d3b972;
-            color: #1a2e1a;
-            font-weight: bold;
-        }
-
-        .container {
-            max-width: 960px;
-            margin: 30px auto;
-            padding: 0 20px;
-        }
-
-        .card {
-            background-color: #fff;
-            padding: 30px;
-            margin-bottom: 20px;
-            border-radius: 10px;
-            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .card h2 {
-            margin-top: 0;
-            color: #2f462f;
-        }
-
-        .buttons {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            justify-content: center;
-            margin-bottom: 30px;
-        }
-
-        .buttons button {
-            background-color: #2f462f;
-            color: #fff;
-            border: none;
-            border-radius: 8px;
-            padding: 12px 18px;
-            font-size: 14px;
-            cursor: pointer;
-            transition: transform 0.2s ease, background-color 0.3s ease;
-        }
-
-        .buttons button:hover {
-            background-color: #3e5c3e;
-            transform: scale(1.05);
-        }
-
-        .hidden {
-            display: none;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Damla Olivenöl</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-color: #2f472f;
+      --accent-color: #d3b972;
+      --bg-color: #fefcf6;
+      --section-bg: #f0e7cb;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-color);
+      color: #222;
+    }
+    header {
+      text-align: center;
+      background-color: var(--section-bg);
+      padding: 2rem 1rem 1rem;
+    }
+    header img {
+      height: 70px;
+      margin-bottom: 0.5rem;
+    }
+    h1 {
+      color: var(--primary-color);
+      margin: 0.2em 0 1em;
+    }
+    #languageSelect {
+      background-color: var(--accent-color);
+      border: none;
+      padding: 0.3em 1em;
+      border-radius: 4px;
+      font-weight: bold;
+      color: #000;
+    }
+    .container {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    .card {
+      background: #fff;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      margin-bottom: 2rem;
+    }
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+      margin-bottom: 2rem;
+    }
+    .btn {
+      background-color: var(--primary-color);
+      color: #fff;
+      padding: 0.8rem 1.2rem;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background-color 0.2s ease;
+    }
+    .btn:hover {
+      background-color: #223522;
+    }
+  </style>
 </head>
-
 <body>
-    <header>
-        <img src="logo.png" alt="Damla Logo">
-        <h1 id="main-title">NATIVES OLIVENÖL EXTRA – GEMLIK AUS KARACABEY</h1>
-        <div class="lang-select">
-            <label for="language-select" id="lang-label">Deutsch:</label>
-            <select id="language-select">
-                <option value="de">Deutsch</option>
-                <option value="en">English</option>
-                <option value="tr">Türkçe</option>
-                <option value="fr">Français</option>
-            </select>
-        </div>
-    </header>
+  <header>
+    <img src="logo.png" alt="Damla Logo">
+    <h1 id="main-title">NATIVES OLIVENÖL EXTRA – GEMLIK AUS KARACABEY</h1>
+    <div>
+      <label for="languageSelect" id="lang-label">Deutsch:</label>
+      <select id="languageSelect">
+        <option value="de">Deutsch</option>
+        <option value="en">English</option>
+        <option value="tr">Türkçe</option>
+        <option value="fr">Français</option>
+      </select>
+    </div>
+  </header>
 
-    <div class="container">
-        <div class="card">
-            <h2 id="about-title">Über unser Olivenöl</h2>
-            <p id="about-text">
-                Dieses hochwertige native Olivenöl extra stammt aus den fruchtbaren Böden von Karacabey (Bursa, Türkei) und wird aus 100 % Gemlik-Oliven gewonnen – einer der edelsten Olivensorten Anatoliens. <br><br>
-                Mit einem sehr niedrigen Säuregehalt von nur 0,3 % (Ölsäure) und seiner ungefilterten, naturbelassenen Struktur bietet dieses Öl ein intensives, charaktervolles Aroma. <br><br>
-                ✓ Keine chemische Behandlung<br>
-                ✓ Kein Raffinieren<br>
-                ✓ Keine Mischung – 100 % sortenrein<br><br>
-                Für jeden Liter dieses nativen Olivenöls extra werden nur 4,5 kg frische Oliven aus der ersten Ernte verarbeitet. Das Ergebnis: Der pure Geschmack der Natur – direkt auf Ihrem Teller.
-            </p>
-        </div>
-
-        <div class="buttons">
-            <button onclick="showSection('history')" id="btn-history">Geschichte von Olivenöl</button>
-            <button onclick="showSection('types')" id="btn-types">Olivenölarten</button>
-            <button onclick="showSection('benefits')" id="btn-benefits">Vorteile von Olivenöl</button>
-            <button onclick="showSection('fake')" id="btn-fake">Fake-Olivenöl erkennen</button>
-            <button onclick="showSection('quality')" id="btn-quality">Gutes Olivenöl erkennen</button>
-            <button onclick="showSection('use')" id="btn-use">Wie konsumieren?</button>
-        </div>
-
-        <div class="card" id="info-section"></div>
+  <div class="container">
+    <div class="card">
+      <h2 id="about-title">Über unser Olivenöl</h2>
+      <p id="about-text">Wird geladen ...</p>
     </div>
 
-    <script>
-        const texts = {
-            langLabel: {
-                de: "Deutsch:", en: "English:", tr: "Türkçe:", fr: "Français:"
-            },
-            mainTitle: {
-                de: "NATIVES OLIVENÖL EXTRA – GEMLIK AUS KARACABEY",
-                en: "EXTRA VIRGIN OLIVE OIL – GEMLIK FROM KARACABEY",
-                tr: "NATÜREL SIZMA ZEYTİNYAĞI – KARACABEY GEMLİK",
-                fr: "HUILE D’OLIVE VIERGE EXTRA – GEMLIK DE KARACABEY"
-            },
-            aboutTitle: {
-                de: "Über unser Olivenöl",
-                en: "About Our Olive Oil",
-                tr: "Zeytinyağımız Hakkında",
-                fr: "À propos de notre huile"
-            },
-            aboutText: {
-                de: `...`, // vollständiger informativer deutscher Text (wie oben)
-                en: `...`, // vollständiger englischer Text
-                tr: `...`, // vollständiger türkischer Text
-                fr: `...`  // vollständiger französischer Text
-            }
-        };
+    <div class="buttons">
+      <button class="btn" onclick="loadContent('history')" id="btn-history">Geschichte von Olivenöl</button>
+      <button class="btn" onclick="loadContent('types')" id="btn-types">Olivenölarten</button>
+      <button class="btn" onclick="loadContent('benefits')" id="btn-benefits">Vorteile von Olivenöl</button>
+      <button class="btn" onclick="loadContent('fake')" id="btn-fake">Fake-Olivenöl erkennen</button>
+      <button class="btn" onclick="loadContent('quality')" id="btn-quality">Gutes Olivenöl erkennen</button>
+      <button class="btn" onclick="loadContent('how')" id="btn-how">Wie konsumieren?</button>
+    </div>
 
-        const elements = {
-            mainTitle: document.getElementById("main-title"),
-            langLabel: document.getElementById("lang-label"),
-            aboutTitle: document.getElementById("about-title"),
-            aboutText: document.getElementById("about-text")
-        };
+    <div class="card">
+      <h2 id="info-title">...</h2>
+      <p id="info-text">...</p>
+    </div>
+  </div>
 
-        document.getElementById("language-select").addEventListener("change", e => {
-            const lang = e.target.value;
-            elements.mainTitle.innerText = texts.mainTitle[lang];
-            elements.langLabel.innerText = texts.langLabel[lang];
-            elements.aboutTitle.innerText = texts.aboutTitle[lang];
-            elements.aboutText.innerHTML = texts.aboutText[lang];
-        });
-
-        function showSection(section) {
-            document.getElementById("info-section").innerHTML = `<h2>...${section}...</h2><p>...</p>`;
+  <script>
+    const content = {
+      de: {
+        title: "NATIVES OLIVENÖL EXTRA – GEMLIK AUS KARACABEY",
+        aboutTitle: "Über unser Olivenöl",
+        aboutText: "Dieses hochwertige native Olivenöl extra stammt aus Karacabey (Bursa, Türkei)...", // <-- Volltext folgt
+        buttons: [
+          "Geschichte von Olivenöl", "Olivenölarten", "Vorteile von Olivenöl", "Fake-Olivenöl erkennen", "Gutes Olivenöl erkennen", "Wie konsumieren?"
+        ],
+        label: "Deutsch:",
+        info: {
+          history: "Die Geschichte des Olivenöls reicht Tausende Jahre zurück...",
+          types: "Es gibt verschiedene Arten von Olivenöl, je nach Verarbeitungsmethode...",
+          benefits: "Olivenöl ist reich an ungesättigten Fettsäuren...",
+          fake: "Fake-Olivenöl lässt sich oft am Preis, der Herkunft und dem Geschmack erkennen...",
+          quality: "Ein gutes Olivenöl erkennt man am Geruch, der Farbe, dem Geschmack und der Herkunft...",
+          how: "Man kann Olivenöl roh verzehren, zum Kochen, Marinieren oder Backen verwenden..."
         }
-    </script>
-</body>
+      }
+      // Weitere Sprachen folgen hier (en, tr, fr)
+    };
 
+    const langSelect = document.getElementById("languageSelect");
+    const mainTitle = document.getElementById("main-title");
+    const aboutTitle = document.getElementById("about-title");
+    const aboutText = document.getElementById("about-text");
+    const infoTitle = document.getElementById("info-title");
+    const infoText = document.getElementById("info-text");
+    const langLabel = document.getElementById("lang-label");
+
+    function updateLanguage(lang) {
+      const t = content[lang];
+      mainTitle.textContent = t.title;
+      aboutTitle.textContent = t.aboutTitle;
+      aboutText.textContent = t.aboutText;
+      langLabel.textContent = t.label;
+      document.getElementById("btn-history").textContent = t.buttons[0];
+      document.getElementById("btn-types").textContent = t.buttons[1];
+      document.getElementById("btn-benefits").textContent = t.buttons[2];
+      document.getElementById("btn-fake").textContent = t.buttons[3];
+      document.getElementById("btn-quality").textContent = t.buttons[4];
+      document.getElementById("btn-how").textContent = t.buttons[5];
+      infoTitle.textContent = "...";
+      infoText.textContent = "...";
+    }
+
+    function loadContent(topic) {
+      const lang = langSelect.value;
+      infoTitle.textContent = content[lang].buttons[
+        ["history", "types", "benefits", "fake", "quality", "how"].indexOf(topic)
+      ];
+      infoText.textContent = content[lang].info[topic];
+    }
+
+    langSelect.addEventListener("change", (e) => updateLanguage(e.target.value));
+    updateLanguage("de");
+  </script>
+</body>
 </html>
