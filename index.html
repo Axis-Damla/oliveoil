@@ -203,7 +203,7 @@
       const t = translations[currentLang];
       titleEl.textContent = t.title;
       aboutTitle.textContent = t.aboutTitle;
-      aboutText.textContent = t.aboutText;
+      aboutText.innerHTML = t.aboutText;
       buttons.forEach((id, i) => {
         document.getElementById(id).textContent = t.buttons[i];
       });
