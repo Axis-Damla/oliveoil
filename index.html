@@ -1,78 +1,71 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Damla Olivenöl</title>
   <style>
     body {
-      margin: 0;
       font-family: Arial, sans-serif;
-      background-color: #fefbf4;
+      background-color: #fdfaf3;
+      margin: 0;
+      padding: 0;
+      color: #222;
     }
     header {
-      background-color: #ece1c5;
+      background-color: #ede3c7;
+      padding: 20px;
       text-align: center;
-      padding: 1.5rem 0;
     }
     header img {
-      height: 60px;
-      margin-bottom: 0.3rem;
+      height: 70px;
+      margin-bottom: 10px;
     }
     h1 {
       margin: 0;
-      color: #2e4b2f;
+      color: #2f4f2f;
+    }
+    .language-select {
+      margin: 10px auto;
+      text-align: center;
     }
     select {
-      background-color: #c6931a;
-      color: #fff;
+      padding: 5px;
+      background-color: #d9a52c;
       border: none;
-      padding: 0.3rem 0.6rem;
-      border-radius: 5px;
+      color: white;
       font-weight: bold;
     }
-    main {
-      max-width: 960px;
-      margin: 1rem auto;
-      padding: 0 1rem;
-    }
-    .card {
+    .content, .section {
+      max-width: 800px;
+      margin: 20px auto;
       background: white;
-      border-radius: 10px;
+      padding: 20px;
+      border-radius: 8px;
       box-shadow: 0 0 10px rgba(0,0,0,0.05);
-      padding: 1.5rem;
-      margin-bottom: 1rem;
     }
-    .btn-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      justify-content: center;
-      margin-bottom: 1rem;
+    .button-row {
+      text-align: center;
+      margin-bottom: 20px;
     }
-    button {
-      background-color: #2e4b2f;
+    .button-row button {
+      background-color: #2f4f2f;
       color: white;
       border: none;
-      padding: 0.6rem 1rem;
+      margin: 5px;
+      padding: 10px 15px;
+      cursor: pointer;
       border-radius: 5px;
       font-weight: bold;
-      cursor: pointer;
-      transition: transform 0.15s ease-in-out;
-    }
-    button:hover {
-      transform: scale(1.05);
     }
   </style>
 </head>
 <body>
   <header>
-<div style="text-align: center; margin-bottom: 10px;">
-  <img src="logo.png" alt="Damla Logo" style="height: 150px;" />
-</div>
-    <h1 id="mainTitle">NATIVES OLIVENÖL EXTRA – GEMLIK AUS KARACABEY</h1>
-    <div>
-      <label for="language" id="langLabel">Deutsch:</label>
+    <img src="logo.png" alt="Damla Logo" />
+    <h1 id="title"></h1>
+    <div class="language-select">
+      <label for="language">English:</label>
       <select id="language">
         <option value="de">Deutsch</option>
         <option value="en">English</option>
@@ -81,120 +74,146 @@
       </select>
     </div>
   </header>
-  <main>
-    <div class="card">
-      <h2 id="aboutTitle">Über unser Olivenöl</h2>
-      <p id="aboutContent"></p>
-    </div>
 
-    <div class="btn-container">
-      <button onclick="loadContent('history')" id="btnHistory"></button>
-      <button onclick="loadContent('types')" id="btnTypes"></button>
-      <button onclick="loadContent('benefits')" id="btnBenefits"></button>
-      <button onclick="loadContent('fake')" id="btnFake"></button>
-      <button onclick="loadContent('quality')" id="btnQuality"></button>
-      <button onclick="loadContent('usage')" id="btnUsage"></button>
-    </div>
+  <div class="content">
+    <h2 id="about-title"></h2>
+    <p id="about-text"></p>
+  </div>
 
-    <div class="card">
-      <h2 id="sectionTitle">...</h2>
-      <p id="sectionContent">...</p>
-    </div>
-  </main>
+  <div class="button-row">
+    <button onclick="showSection('history')" id="btn-history"></button>
+    <button onclick="showSection('types')" id="btn-types"></button>
+    <button onclick="showSection('benefits')" id="btn-benefits"></button>
+    <button onclick="showSection('fake')" id="btn-fake"></button>
+    <button onclick="showSection('good')" id="btn-good"></button>
+    <button onclick="showSection('usage')" id="btn-usage"></button>
+  </div>
+
+  <div class="section">
+    <h3 id="section-title"></h3>
+    <p id="section-text"></p>
+  </div>
 
   <script>
     const translations = {
       de: {
-        lang: "Deutsch:",
         title: "NATIVES OLIVENÖL EXTRA – GEMLIK AUS KARACABEY",
         aboutTitle: "Über unser Olivenöl",
-        aboutContent: `Dieses hochwertige native Olivenöl extra stammt aus den fruchtbaren Böden von Karacabey (Bursa, Türkei) und
-wird ausschließlich aus 100 % Gemlik-Oliven gewonnen. Diese Olivensorte gilt als eine der edelsten und
-ölhaltigsten Sorten Anatoliens.
-Mit einem extrem niedrigen Säuregehalt von nur 0,3 % (Ölsäure) und seiner naturbelassenen Struktur bietet unser
-Öl ein intensives, vollmundiges Aroma. Es wird weder chemisch behandelt noch raffiniert und bleibt somit
-vollkommen unverfälscht.
-Für jeden Liter Olivenöl werden rund 4,5 kg frische Oliven aus der ersten Ernte direkt kaltgepresst. Das Ergebnis:
-Der pure Geschmack der Natur – direkt auf Ihrem Teller.
-✓ Keine chemische Behandlung
-✓ Kein Raffinieren
-✓ Keine Mischung – 100 % sortenrein`,
-        btnHistory: "Geschichte von Olivenöl",
-        btnTypes: "Olivenölsorten",
-        btnBenefits: "Vorteile von Olivenöl",
-        btnFake: "Fake-Olivenöl erkennen",
-        btnQuality: "Gutes Olivenöl erkennen",
-        btnUsage: "Wie konsumieren?",
-        historyTitle: "Geschichte von Olivenöl",
-        historyContent: "Olivenöl hat eine über 6000-jährige Geschichte. Schon in der Antike wurde es als Heilmittel, Nahrungsquelle und für religiöse Rituale verwendet. Es galt als Symbol für Frieden und Reichtum. Heute ist es zentraler Bestandteil der mediterranen Küche.",
-        typesTitle: "Olivenölsorten",
-        typesContent: "Es gibt verschiedene Arten von Olivenöl: extra vergine, vergine, raffiniert, Lampantöl. Nur extra natives Olivenöl stammt aus erster Kaltpressung und ist ohne chemische Behandlung – die beste Wahl für Geschmack und Gesundheit.",
-        benefitsTitle: "Vorteile von Olivenöl",
-        benefitsContent: "Reich an Antioxidantien, unterstützt Olivenöl das Herz-Kreislauf-System, wirkt entzündungshemmend, verbessert die Hautgesundheit und kann beim Abnehmen helfen.",
-        fakeTitle: "Fake-Olivenöl erkennen",
-        fakeContent: "Achte auf Herkunft, Säuregehalt < 0,8 %, Farbe und Geschmack. Vertrauen Sie auf zertifizierte Produzenten, Bio-Siegel und transparente Herstellungsverfahren.",
-        qualityTitle: "Gutes Olivenöl erkennen",
-        qualityContent: "Gutes Öl hat eine grün-goldene Farbe, duftet frisch und fruchtig, schmeckt leicht bitter und scharf im Abgang – ein Zeichen für viele gesunde Polyphenole.",
-        usageTitle: "Wie konsumieren?",
-        usageContent: "Ideal roh über Salate, auf Brot, über Gemüse. Nicht stark erhitzen – so bleiben Nährstoffe und Geschmack erhalten."
+        aboutText:
+          "Dieses hochwertige native Olivenöl extra stammt aus den fruchtbaren Böden von Karacabey (Bursa, Türkei) und wird ausschließlich aus 100 % Gemlik-Oliven gewonnen. Diese Olivensorte gilt als eine der edelsten und ölhaltigsten Sorten Anatoliens.\nMit einem extrem niedrigen Säuregehalt von nur 0,3 % (Ölsäure) und seiner naturbelassenen Struktur bietet unser Öl ein intensives, vollmundiges Aroma. Es wird weder chemisch behandelt noch raffiniert und bleibt somit vollkommen unverfälscht.\nFür jeden Liter Olivenöl werden rund 4,5 kg frische Oliven aus der ersten Ernte direkt kaltgepresst. Das Ergebnis: Der pure Geschmack der Natur – direkt auf Ihrem Teller.\n✓ Keine chemische Behandlung\n✓ Kein Raffinieren\n✓ Keine Mischung – 100 % sortenrein",
+        buttons: [
+          "Geschichte von Olivenöl",
+          "Olivenölsorten",
+          "Vorteile von Olivenöl",
+          "Fake-Olivenöl erkennen",
+          "Gutes Olivenöl erkennen",
+          "Wie konsumieren?"
+        ],
+        sections: {
+          history: ["Geschichte von Olivenöl", "Olivenöl hat eine über 6000-jährige Geschichte..."],
+          types: ["Olivenölsorten", "Es gibt verschiedene Arten von Olivenöl..."],
+          benefits: ["Vorteile von Olivenöl", "Olivenöl enthält gesunde Fette..."],
+          fake: ["Fake-Olivenöl erkennen", "Achten Sie auf Herkunft, Preis, Geruch..."],
+          good: ["Gutes Olivenöl erkennen", "Prüfen Sie die Flasche, Geschmack..."],
+          usage: ["Wie konsumieren?", "Ideal roh auf Salaten, Brot..."]
+        }
       },
       en: {
-        lang: "English:",
         title: "EXTRA VIRGIN OLIVE OIL – GEMLIK FROM KARACABEY",
         aboutTitle: "About Our Olive Oil",
-        aboutContent: "This premium extra virgin olive oil comes from the fertile soil of Karacabey (Bursa, Turkey) and is made exclusively from 100% Gemlik olives – one of Anatolia’s finest and richest olive varieties.\nWith an extremely low acidity of only 0.3% (oleic acid) and an unrefined, natural structure, this oil offers a rich, full-bodied aroma. It is neither chemically treated nor refined, making it completely pure.\nEach liter of oil requires about 4.5 kg of fresh olives from the first harvest – pure taste straight from nature to your plate.\n✓ No chemical treatment\n✓ No refining\n✓ No blending – 100% pure",        
-        btnHistory: "History of Olive Oil",
-        btnTypes: "Types of Olive Oil",
-        btnBenefits: "Health Benefits",
-        btnFake: "How to Spot Fake",
-        btnQuality: "What Makes it Good?",
-        btnUsage: "How to Use",
-        historyTitle: "History of Olive Oil",
-        historyContent: "Olive oil has over 6000 years of history. In ancient times, it was used as a remedy, food source, and in religious rituals. It symbolized peace and wealth. Today, it's a staple in Mediterranean cuisine.",
-        typesTitle: "Types of Olive Oil",
-        typesContent: "Extra virgin, virgin, refined, lampante – only extra virgin olive oil is cold-pressed without chemicals, offering the best flavor and health profile.",
-        benefitsTitle: "Health Benefits",
-        benefitsContent: "Rich in antioxidants, supports heart health, reduces inflammation, improves skin and helps with weight loss.",
-        fakeTitle: "How to Spot Fake",
-        fakeContent: "Look for origin, acidity < 0.8%, color and taste. Trust certified producers and transparent manufacturing.",
-        qualityTitle: "What Makes it Good?",
-        qualityContent: "Good olive oil is golden-green, smells fresh, tastes fruity with some bitterness – a sign of healthy polyphenols.",
-        usageTitle: "How to Use",
-        usageContent: "Best raw over salads, bread or vegetables. Avoid overheating to preserve nutrients and taste."
+        aboutText:
+          "This premium extra virgin olive oil comes from the fertile soil of Karacabey (Bursa, Turkey) and is made exclusively from 100% Gemlik olives – one of Anatolia’s finest and richest olive varieties.\nWith an extremely low acidity of only 0.3% (oleic acid) and an unrefined, natural structure, this oil offers a rich, full-bodied aroma.\nIt is neither chemically treated nor refined, making it completely pure.\nEach liter of oil requires about 4.5 kg of fresh olives from the first harvest – pure taste straight from nature to your plate.\n✓ No chemical treatment\n✓ No refining\n✓ No blending – 100% pure",
+        buttons: [
+          "History of Olive Oil",
+          "Types of Olive Oil",
+          "Health Benefits",
+          "How to Spot Fake",
+          "What Makes it Good?",
+          "How to Use"
+        ],
+        sections: {
+          history: ["History of Olive Oil", "Olive oil has over 6000 years of history..."],
+          types: ["Types of Olive Oil", "There are various types of olive oil..."],
+          benefits: ["Health Benefits", "Olive oil contains healthy fats..."],
+          fake: ["How to Spot Fake", "Check origin, price, smell..."],
+          good: ["What Makes it Good?", "Look at bottle, taste..."],
+          usage: ["How to Use", "Best raw over salads, bread..."]
+        }
       },
-      // Türkisch und Französisch folgen nach Bedarf
+      tr: {
+        title: "NATÜREL SIZMA ZEYTİNYAĞI – KARACABEY GEMLİK",
+        aboutTitle: "Zeytinyağımız Hakkında",
+        aboutText: "...", // Genaue türkische Texte hier einfügen
+        buttons: ["Zeytinyağının Tarihi", "Zeytinyağı Türleri", "Faydaları", "Sahte Nasıl Anlaşılır?", "Kalite Nasıl Anlaşılır?", "Nasıl Tüketilir?"],
+        sections: {
+          history: ["Zeytinyağının Tarihi", "Zeytinyağının tarihi 6000 yılı aşar..."],
+          types: ["Zeytinyağı Türleri", "Sızma, rafine..."],
+          benefits: ["Faydaları", "Sağlıklı yağlar içerir..."],
+          fake: ["Sahte Nasıl Anlaşılır?", "Etiket, koku, fiyat..."],
+          good: ["Kalite Nasıl Anlaşılır?", "Şişe, tat, menşei..."],
+          usage: ["Nasıl Tüketilir?", "Salata, ekmek, çiğ tüketim..."]
+        }
+      },
+      fr: {
+        title: "HUILE D’OLIVE VIERGE EXTRA – GEMLIK DE KARACABEY",
+        aboutTitle: "À propos de notre huile",
+        aboutText: "...", // Französische Texte einfügen
+        buttons: ["Histoire de l'huile", "Types d'huile", "Bienfaits", "Détecter les fausses", "Reconnaître la qualité", "Comment consommer"],
+        sections: {
+          history: ["Histoire de l'huile", "L'huile d'olive a une histoire de plus de 6000 ans..."],
+          types: ["Types d'huile", "Vierge, raffinée, lampante..."],
+          benefits: ["Bienfaits", "Contient de bonnes graisses..."],
+          fake: ["Détecter les fausses", "Regarder l'origine, l'étiquette..."],
+          good: ["Reconnaître la qualité", "Goût, couleur, bouteille..."],
+          usage: ["Comment consommer", "Idéal cru, sur salade..."]
+        }
+      }
     };
 
-    let currentLang = 'de';
+    const languageSelector = document.getElementById("language");
+    const titleEl = document.getElementById("title");
+    const aboutTitle = document.getElementById("about-title");
+    const aboutText = document.getElementById("about-text");
+    const sectionTitle = document.getElementById("section-title");
+    const sectionText = document.getElementById("section-text");
+    const buttons = [
+      "btn-history",
+      "btn-types",
+      "btn-benefits",
+      "btn-fake",
+      "btn-good",
+      "btn-usage"
+    ];
 
-    function setLanguage(lang) {
-      currentLang = lang;
-      const t = translations[lang];
-      document.getElementById("mainTitle").innerText = t.title;
-      document.getElementById("aboutTitle").innerText = t.aboutTitle;
-      document.getElementById("aboutContent").innerText = t.aboutContent;
-      document.getElementById("btnHistory").innerText = t.btnHistory;
-      document.getElementById("btnTypes").innerText = t.btnTypes;
-      document.getElementById("btnBenefits").innerText = t.btnBenefits;
-      document.getElementById("btnFake").innerText = t.btnFake;
-      document.getElementById("btnQuality").innerText = t.btnQuality;
-      document.getElementById("btnUsage").innerText = t.btnUsage;
-      document.getElementById("langLabel").innerText = t.lang;
-      loadContent("history");
-    }
+    let currentLang = "de";
 
-    function loadContent(key) {
+    function updateContent() {
       const t = translations[currentLang];
-      document.getElementById("sectionTitle").innerText = t[key + "Title"];
-      document.getElementById("sectionContent").innerText = t[key + "Content"];
+      titleEl.textContent = t.title;
+      aboutTitle.textContent = t.aboutTitle;
+      aboutText.textContent = t.aboutText;
+      buttons.forEach((id, i) => {
+        document.getElementById(id).textContent = t.buttons[i];
+      });
     }
 
-    document.getElementById("language").addEventListener("change", (e) => {
-      setLanguage(e.target.value);
+    function showSection(key) {
+      const t = translations[currentLang].sections[key];
+      sectionTitle.textContent = t[0];
+      sectionText.textContent = t[1];
+    }
+
+    languageSelector.addEventListener("change", () => {
+      currentLang = languageSelector.value;
+      updateContent();
+      showSection("history");
     });
 
     // Initial load
-    setLanguage("de");
+    window.onload = () => {
+      updateContent();
+      showSection("history");
+    };
   </script>
 </body>
 </html>
