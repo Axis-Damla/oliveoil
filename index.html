@@ -4,83 +4,81 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Damla Olivenöl</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
   <style>
-    :root {
-      --primary-color: #2f472f;
-      --accent-color: #d3b972;
-      --bg-color: #fefcf6;
-      --section-bg: #f0e7cb;
-    }
-    * { box-sizing: border-box; }
     body {
-      margin: 0;
       font-family: 'Inter', sans-serif;
-      background-color: var(--bg-color);
-      color: #222;
+      margin: 0;
+      background-color: #fefcf5;
+      color: #2d2d2d;
     }
     header {
+      background-color: #f1e9d2;
       text-align: center;
-      background-color: var(--section-bg);
-      padding: 2rem 1rem 1rem;
+      padding: 20px 10px 10px 10px;
     }
-    header img {
-      height: 70px;
-      margin-bottom: 0.5rem;
+    #logo {
+      height: 80px;
+      margin-bottom: 10px;
     }
     h1 {
-      color: var(--primary-color);
-      margin: 0.2em 0 1em;
+      margin: 10px 0;
+      color: #2d4421;
     }
-    #languageSelect {
-      background-color: var(--accent-color);
+    #language-selector {
+      margin-top: 10px;
+      font-weight: 600;
+    }
+    select {
+      background-color: #d4a537;
+      color: #fff;
       border: none;
-      padding: 0.3em 1em;
-      border-radius: 4px;
-      font-weight: bold;
-      color: #000;
+      padding: 5px 10px;
+      font-weight: 600;
+      border-radius: 5px;
     }
     .container {
       max-width: 900px;
-      margin: 2rem auto;
-      padding: 0 1rem;
+      margin: 30px auto;
+      padding: 0 20px;
     }
     .card {
-      background: #fff;
-      padding: 1.5rem;
+      background-color: white;
       border-radius: 10px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-      margin-bottom: 2rem;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+      padding: 20px;
+      margin-bottom: 20px;
     }
     .buttons {
       display: flex;
       flex-wrap: wrap;
-      gap: 1rem;
+      gap: 10px;
       justify-content: center;
-      margin-bottom: 2rem;
+      margin-bottom: 20px;
     }
-    .btn {
-      background-color: var(--primary-color);
-      color: #fff;
-      padding: 0.8rem 1.2rem;
+    .buttons button {
+      background-color: #2d4421;
+      color: white;
+      padding: 10px 15px;
       border: none;
-      border-radius: 6px;
-      cursor: pointer;
+      border-radius: 8px;
       font-weight: 600;
-      transition: background-color 0.2s ease;
+      cursor: pointer;
+      transition: transform 0.2s, background-color 0.2s;
     }
-    .btn:hover {
-      background-color: #223522;
+    .buttons button:hover {
+      background-color: #3f5e2f;
+      transform: scale(1.05);
     }
   </style>
 </head>
 <body>
   <header>
-    <img src="logo.png" alt="Damla Logo">
-    <h1 id="main-title">NATIVES OLIVENÖL EXTRA – GEMLIK AUS KARACABEY</h1>
-    <div>
-      <label for="languageSelect" id="lang-label">Deutsch:</label>
-      <select id="languageSelect">
+    <img id="logo" src="logo.png" alt="Damla Logo">
+    <h1 id="title">NATIVES OLIVENÖL EXTRA – GEMLIK AUS KARACABEY</h1>
+    <div id="language-selector">
+      <label for="language">Deutsch:</label>
+      <select id="language">
         <option value="de">Deutsch</option>
         <option value="en">English</option>
         <option value="tr">Türkçe</option>
@@ -88,84 +86,122 @@
       </select>
     </div>
   </header>
-
-  <div class="container">
-    <div class="card">
+  <main class="container">
+    <section class="card">
       <h2 id="about-title">Über unser Olivenöl</h2>
-      <p id="about-text">Wird geladen ...</p>
-    </div>
+      <p id="about-text">
+        Dieses hochwertige native Olivenöl extra stammt aus den fruchtbaren Böden von Karacabey (Bursa, Türkei) und wird
+        ausschließlich aus 100 % Gemlik-Oliven gewonnen. Diese Olivensorte gilt als eine der edelsten und ölhaltigsten
+        Sorten Anatoliens.
+        <br><br>
+        Mit einem extrem niedrigen Säuregehalt von nur 0,3 % (Ölsäure) und seiner naturbelassenen Struktur bietet unser
+        Öl ein intensives, vollmundiges Aroma. Es wird weder chemisch behandelt noch raffiniert und bleibt somit vollkommen
+        unverfälscht.
+        <br><br>
+        Für jeden Liter Olivenöl werden rund 4,5 kg frische Oliven aus der ersten Ernte direkt kaltgepresst. Das Ergebnis:
+        Der pure Geschmack der Natur – direkt auf Ihrem Teller.
+        <ul>
+          <li>&#10004; Keine chemische Behandlung</li>
+          <li>&#10004; Kein Raffinieren</li>
+          <li>&#10004; Keine Mischung – 100 % sortenrein</li>
+        </ul>
+      </p>
+    </section>
 
     <div class="buttons">
-      <button class="btn" onclick="loadContent('history')" id="btn-history">Geschichte von Olivenöl</button>
-      <button class="btn" onclick="loadContent('types')" id="btn-types">Olivenölarten</button>
-      <button class="btn" onclick="loadContent('benefits')" id="btn-benefits">Vorteile von Olivenöl</button>
-      <button class="btn" onclick="loadContent('fake')" id="btn-fake">Fake-Olivenöl erkennen</button>
-      <button class="btn" onclick="loadContent('quality')" id="btn-quality">Gutes Olivenöl erkennen</button>
-      <button class="btn" onclick="loadContent('how')" id="btn-how">Wie konsumieren?</button>
+      <button onclick="showText('history')">Geschichte von Olivenöl</button>
+      <button onclick="showText('types')">Olivenölarten</button>
+      <button onclick="showText('benefits')">Vorteile von Olivenöl</button>
+      <button onclick="showText('fake')">Fake-Olivenöl erkennen</button>
+      <button onclick="showText('good')">Gutes Olivenöl erkennen</button>
+      <button onclick="showText('use')">Wie konsumieren?</button>
     </div>
 
-    <div class="card">
-      <h2 id="info-title">...</h2>
-      <p id="info-text">...</p>
-    </div>
-  </div>
+    <section id="info" class="card"></section>
+  </main>
 
   <script>
-    const content = {
+    const translations = {
       de: {
         title: "NATIVES OLIVENÖL EXTRA – GEMLIK AUS KARACABEY",
-        aboutTitle: "Über unser Olivenöl",
-        aboutText: "Dieses hochwertige native Olivenöl extra stammt aus Karacabey (Bursa, Türkei)...", // <-- Volltext folgt
-        buttons: [
-          "Geschichte von Olivenöl", "Olivenölarten", "Vorteile von Olivenöl", "Fake-Olivenöl erkennen", "Gutes Olivenöl erkennen", "Wie konsumieren?"
-        ],
         label: "Deutsch:",
-        info: {
-          history: "Die Geschichte des Olivenöls reicht Tausende Jahre zurück...",
-          types: "Es gibt verschiedene Arten von Olivenöl, je nach Verarbeitungsmethode...",
-          benefits: "Olivenöl ist reich an ungesättigten Fettsäuren...",
-          fake: "Fake-Olivenöl lässt sich oft am Preis, der Herkunft und dem Geschmack erkennen...",
-          quality: "Ein gutes Olivenöl erkennt man am Geruch, der Farbe, dem Geschmack und der Herkunft...",
-          how: "Man kann Olivenöl roh verzehren, zum Kochen, Marinieren oder Backen verwenden..."
-        }
+        aboutTitle: "Über unser Olivenöl",
+        buttons: [
+          "Geschichte von Olivenöl",
+          "Olivenölarten",
+          "Vorteile von Olivenöl",
+          "Fake-Olivenöl erkennen",
+          "Gutes Olivenöl erkennen",
+          "Wie konsumieren?"
+        ]
+      },
+      en: {
+        title: "EXTRA VIRGIN OLIVE OIL – GEMLIK FROM KARACABEY",
+        label: "English:",
+        aboutTitle: "About Our Olive Oil",
+        buttons: [
+          "History of Olive Oil",
+          "Types of Olive Oil",
+          "Health Benefits",
+          "How to Spot Fake",
+          "What Makes it Good?",
+          "How to Use"
+        ]
+      },
+      tr: {
+        title: "NATÜREL SIZMA ZEYTİNYAĞI – GEMLİK, KARACABEY",
+        label: "Türkçe:",
+        aboutTitle: "Zeytinyağımız Hakkında",
+        buttons: [
+          "Zeytinyağının Tarihi",
+          "Zeytinyağı Çeşitleri",
+          "Faydaları",
+          "Sahte Zeytinyağı Nasıl Anlaşılır",
+          "Kaliteli Zeytinyağı Nasıl Anlaşılır",
+          "Nasıl Tüketilir?"
+        ]
+      },
+      fr: {
+        title: "HUILE D'OLIVE VIERGE EXTRA – GEMLIK DE KARACABEY",
+        label: "Français:",
+        aboutTitle: "À propos de notre huile",
+        buttons: [
+          "Histoire de l'huile d'olive",
+          "Types d'huile d'olive",
+          "Bienfaits",
+          "Reconnaître les fausses",
+          "Bonnes caractéristiques",
+          "Comment consommer"
+        ]
       }
-      // Weitere Sprachen folgen hier (en, tr, fr)
     };
 
-    const langSelect = document.getElementById("languageSelect");
-    const mainTitle = document.getElementById("main-title");
+    const languageSelect = document.getElementById("language");
+    const title = document.getElementById("title");
+    const label = document.querySelector("label[for='language']");
     const aboutTitle = document.getElementById("about-title");
-    const aboutText = document.getElementById("about-text");
-    const infoTitle = document.getElementById("info-title");
-    const infoText = document.getElementById("info-text");
-    const langLabel = document.getElementById("lang-label");
+    const buttons = document.querySelectorAll(".buttons button");
 
-    function updateLanguage(lang) {
-      const t = content[lang];
-      mainTitle.textContent = t.title;
+    languageSelect.addEventListener("change", () => {
+      const lang = languageSelect.value;
+      const t = translations[lang];
+      title.textContent = t.title;
+      label.textContent = t.label;
       aboutTitle.textContent = t.aboutTitle;
-      aboutText.textContent = t.aboutText;
-      langLabel.textContent = t.label;
-      document.getElementById("btn-history").textContent = t.buttons[0];
-      document.getElementById("btn-types").textContent = t.buttons[1];
-      document.getElementById("btn-benefits").textContent = t.buttons[2];
-      document.getElementById("btn-fake").textContent = t.buttons[3];
-      document.getElementById("btn-quality").textContent = t.buttons[4];
-      document.getElementById("btn-how").textContent = t.buttons[5];
-      infoTitle.textContent = "...";
-      infoText.textContent = "...";
-    }
+      buttons.forEach((btn, i) => btn.textContent = t.buttons[i]);
+    });
 
-    function loadContent(topic) {
-      const lang = langSelect.value;
-      infoTitle.textContent = content[lang].buttons[
-        ["history", "types", "benefits", "fake", "quality", "how"].indexOf(topic)
-      ];
-      infoText.textContent = content[lang].info[topic];
+    function showText(topic) {
+      const content = {
+        history: "Olivenöl hat eine über 6000-jährige Geschichte. Schon in der Antike wurde es als Heilmittel, Nahrungsquelle und für religiöse Rituale verwendet. Es galt als Symbol für Frieden und Reichtum. Heute ist es zentraler Bestandteil der mediterranen Küche.",
+        types: "Es gibt verschiedene Arten von Olivenöl: extra vergine, vergine, raffiniert, Lampantöl. Nur extra natives Olivenöl stammt aus erster Kaltpressung und ist ohne chemische Behandlung – die beste Wahl für Geschmack und Gesundheit.",
+        benefits: "Olivenöl ist reich an ungesättigten Fettsäuren, Antioxidantien und Vitamin E. Es unterstützt Herzgesundheit, wirkt entzündungshemmend, fördert die Verdauung und kann das Risiko chronischer Erkrankungen senken.",
+        fake: "Fake-Olivenöle sind oft verdünnt oder falsch deklariert. Hinweise: extrem niedriger Preis, fehlende Herkunftsangabe, unangenehmer Geschmack. Beim Kauf auf transparente Herkunft und Analysezertifikate achten.",
+        good: "Ein gutes Olivenöl riecht fruchtig, schmeckt leicht bitter und scharf. Tipp: In einem Glas erwärmen und riechen. Gute Öle hinterlassen ein leichtes Kratzen im Hals – Zeichen für gesunde Polyphenole.",
+        use: "Ideal zum kalten Verzehr in Salaten, über gekochtem Gemüse oder pur. Hochwertiges Olivenöl kann auch leicht erhitzt werden, sollte aber nicht zum Frittieren verwendet werden. Kühl, dunkel und gut verschlossen lagern."
+      };
+      document.getElementById("info").innerHTML = `<h3>...${topic}...</h3><p>${content[topic]}</p>`;
     }
-
-    langSelect.addEventListener("change", (e) => updateLanguage(e.target.value));
-    updateLanguage("de");
   </script>
 </body>
 </html>
