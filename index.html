@@ -8,25 +8,30 @@
     body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #f9f9f9;
+      background: #fffdf7;
       color: #333;
     }
     header {
-      background-color: #2e4d3d;
-      color: white;
+      background-color: #f1e9d2;
+      color: #2e4d3d;
       padding: 2rem;
       text-align: center;
     }
+    header img {
+      max-width: 140px;
+      display: block;
+      margin: 0 auto 1rem;
+    }
     main {
       padding: 2rem;
-      max-width: 800px;
+      max-width: 900px;
       margin: auto;
     }
     .product-info {
       background-color: #fff;
       border-radius: 10px;
       padding: 2rem;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.07);
       margin-bottom: 2rem;
     }
     .product-info h2 {
@@ -42,28 +47,36 @@
       background-color: #2e4d3d;
       color: white;
       border: none;
-      padding: 1rem;
+      padding: 1rem 1.5rem;
       border-radius: 8px;
       cursor: pointer;
-      transition: background 0.3s ease;
+      transition: all 0.3s ease;
     }
     .buttons button:hover {
       background-color: #3b6650;
+      transform: scale(1.05);
     }
     .info-section {
       display: none;
       background-color: #fff;
-      border-radius: 10px;
+      border-left: 5px solid #2e4d3d;
+      border-radius: 8px;
       padding: 1.5rem;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
     }
     .info-section.active {
       display: block;
+      animation: fadeIn 0.4s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
 <body>
   <header>
+    <img src="damla_logo_transparent.png" alt="Damla Logo">
     <h1>NATIVES OLIVENÖL EXTRA – GEMLIK AUS KARACABEY</h1>
   </header>
 
@@ -91,32 +104,53 @@
 
     <section id="geschichte" class="info-section">
       <h3>Geschichte von Olivenöl</h3>
-      <p>Olivenöl hat eine jahrtausendealte Tradition im Mittelmeerraum und galt bereits in der Antike als Symbol für Gesundheit, Reichtum und Reinheit. Schon die alten Griechen und Römer nutzten es für Ernährung, Medizin und Körperpflege.</p>
+      <p>Olivenöl ist eines der ältesten Kulturgüter der Menschheit. Schon vor über 6000 Jahren nutzten die Menschen im Mittelmeerraum Olivenbäume nicht nur zur Ernährung, sondern auch zur Hautpflege, in der Medizin und als Handelsgut. Besonders im antiken Griechenland und Rom war Olivenöl ein zentrales Element – sowohl in der Küche als auch bei religiösen Ritualen. Es galt als Symbol für Wohlstand, Reinheit und Leben.</p>
     </section>
 
     <section id="arten" class="info-section">
       <h3>Olivenölarten</h3>
-      <p>Die Hauptarten sind: Natives Olivenöl extra, natives Olivenöl, Olivenöl (raffiniert + nativ) und Lampantöl (nicht für den Verzehr geeignet). Qualitätsstufe hängt von Pressung, Verarbeitung und Säurewert ab.</p>
+      <p>1. <strong>Natives Olivenöl extra</strong>: höchste Qualität, kaltgepresst, unter 0,8 % Säuregehalt<br>
+         2. <strong>Natives Olivenöl</strong>: gute Qualität, ebenfalls kaltgepresst, bis 2 % Säure<br>
+         3. <strong>Olivenöl</strong>: Mischung aus raffiniertem Öl und nativem Öl<br>
+         4. <strong>Rohöl/Lampantöl</strong>: technisch nicht für den menschlichen Verzehr geeignet</p>
+      <p>Je niedriger der Säuregehalt und je naturbelassener das Öl, desto besser die Qualität.</p>
     </section>
 
     <section id="vorteile" class="info-section">
       <h3>Vorteile von Olivenöl</h3>
-      <p>Regelmäßiger Konsum unterstützt Herzgesundheit, wirkt entzündungshemmend, verbessert Hautbild, liefert wertvolle Antioxidantien und ungesättigte Fettsäuren.</p>
+      <p>– Reich an einfach ungesättigten Fettsäuren → gut für das Herz-Kreislauf-System<br>
+         – Enthält Polyphenole → antioxidativ, entzündungshemmend<br>
+         – Senkt schlechtes LDL-Cholesterin, erhöht gutes HDL<br>
+         – Unterstützt gesunde Verdauung<br>
+         – Positive Effekte auf Haut, Gelenke und Gehirn<br>
+         – Kann Diabetes- und Krebsrisiko senken laut Studien</p>
     </section>
 
     <section id="fake" class="info-section">
       <h3>Fake-Olivenöl erkennen</h3>
-      <p>Billig-Olivenöle werden oft gestreckt oder falsch deklariert. Hinweise: sehr niedriger Preis, fehlende Herkunftsangabe, kein Erntejahr, sehr heller Geschmack.</p>
+      <p>Leider sind viele Olivenöle im Supermarkt gestreckt oder falsch deklariert. Achte auf diese Warnsignale:<br>
+         – Extrem niedriger Preis<br>
+         – Vage Herkunft (nur "EU" oder "Mischung aus EU/Nicht-EU")<br>
+         – Kein Erntejahr angegeben<br>
+         – Kein Analysezertifikat oder Siegel (BIO, DOP, PGI)</p>
+      <p>Ein echter Produzent gibt transparent Auskunft über Herkunft, Sorte, Jahrgang, Säurewert und Produktion.</p>
     </section>
 
     <section id="gut" class="info-section">
       <h3>Gutes Olivenöl erkennen</h3>
-      <p>Teste mit: Riechtest (fruchtig, grasig), Geschmackstest (leicht bitter, scharf), Konsistenz bei Kälte (leicht fest), Herkunft/Erntejahr prüfen, auf Zertifikate achten (BIO, DOP).</p>
+      <p><strong>Sensorik:</strong> Fruchtiger Geruch (nach Gras, Tomate, Mandel). Leicht bitterer und pikanter Geschmack – das ist positiv!<br>
+         <strong>Farbe:</strong> zweitrangig. Grünlich oder goldgelb – kein Qualitätsmerkmal allein.<br>
+         <strong>Kältetest:</strong> Bei Kühlschranklagerung wird echtes Olivenöl trüb oder fest.<br>
+         <strong>Transparenz:</strong> Volle Herkunftsangabe, Analysenwerte, ideal: ungefiltert & frisch.</p>
     </section>
 
     <section id="konsum" class="info-section">
       <h3>Wie konsumieren?</h3>
-      <p>Ideal roh über Salate, Antipasti, Dips, Joghurt. Auch beim Kochen geeignet – aber nicht über 180 °C erhitzen. Perfekt für mediterrane Küche.</p>
+      <p>– Klassisch über Salate, kalte Vorspeisen oder Dips<br>
+         – Auf Weißbrot mit etwas Salz als Vorspeise<br>
+         – In Joghurt mit Zitrone (türkische & arabische Küche)<br>
+         – Über Gemüsegerichte oder Pasta träufeln<br>
+         – Nicht zu stark erhitzen (bis max. 180 °C), nicht frittieren</p>
     </section>
   </main>
 
