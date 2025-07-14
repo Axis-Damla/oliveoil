@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Natives Olivenöl Extra – Gemlik</title>
+  <title>Damla Olivenöl</title>
   <style>
     body {
       margin: 0;
@@ -22,20 +22,25 @@
       display: block;
       margin: 0 auto 1rem;
     }
+    .language-select {
+      margin-top: 1rem;
+    }
+    select {
+      padding: 0.5rem;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
     main {
       padding: 2rem;
       max-width: 900px;
       margin: auto;
     }
-    .product-info {
+    .product-info, .info-section {
       background-color: #fff;
       border-radius: 10px;
       padding: 2rem;
       box-shadow: 0 4px 10px rgba(0,0,0,0.07);
       margin-bottom: 2rem;
-    }
-    .product-info h2 {
-      color: #2e4d3d;
     }
     .buttons {
       display: flex;
@@ -58,11 +63,6 @@
     }
     .info-section {
       display: none;
-      background-color: #fff;
-      border-left: 5px solid #2e4d3d;
-      border-radius: 8px;
-      padding: 1.5rem;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
     }
     .info-section.active {
       display: block;
@@ -77,88 +77,106 @@
 <body>
   <header>
     <img src="damla_logo_transparent.png" alt="Damla Logo">
-    <h1>NATIVES OLIVENÖL EXTRA – GEMLIK AUS KARACABEY</h1>
+    <h1 id="main-title">NATIVES OLIVENÖL EXTRA – GEMLIK AUS KARACABEY</h1>
+    <div class="language-select">
+      <label for="language">Sprache / Language / Dil / Langue:</label>
+      <select id="language" onchange="setLanguage(this.value)">
+        <option value="de">Deutsch</option>
+        <option value="en">English</option>
+        <option value="tr">Türkçe</option>
+        <option value="fr">Français</option>
+      </select>
+    </div>
   </header>
 
   <main>
-    <section class="product-info">
-      <h2>Über unser Olivenöl</h2>
-      <p>Dieses hochwertige native Olivenöl extra stammt aus den fruchtbaren Böden von Karacabey (Bursa, Türkei) und wird aus 100 % Gemlik-Oliven gewonnen – einer der edelsten Olivensorten Anatoliens.</p>
-      <p>Mit einem sehr niedrigen Säuregehalt von nur 0,3 % (Ölsäure) und seiner ungefilterten, naturbelassenen Struktur bietet dieses Öl ein intensives, charaktervolles Aroma.</p>
-      <ul>
-        <li>✔ Keine chemische Behandlung</li>
-        <li>✔ Kein Raffinieren</li>
-        <li>✔ Keine Mischung – 100 % sortenrein</li>
-      </ul>
-      <p>Für jeden Liter dieses nativen Olivenöls extra werden nur 4,5 kg frische Oliven aus der ersten Ernte verarbeitet. Das Ergebnis: Der pure Geschmack der Natur – direkt auf Ihrem Teller.</p>
-    </section>
-
-    <div class="buttons">
-      <button onclick="showSection('geschichte')">Geschichte von Olivenöl</button>
-      <button onclick="showSection('arten')">Olivenölarten</button>
-      <button onclick="showSection('vorteile')">Vorteile von Olivenöl</button>
-      <button onclick="showSection('fake')">Fake-Olivenöl erkennen</button>
-      <button onclick="showSection('gut')">Gutes Olivenöl erkennen</button>
-      <button onclick="showSection('konsum')">Wie konsumieren?</button>
-    </div>
-
-    <section id="geschichte" class="info-section">
-      <h3>Geschichte von Olivenöl</h3>
-      <p>Olivenöl ist eines der ältesten Kulturgüter der Menschheit. Schon vor über 6000 Jahren nutzten die Menschen im Mittelmeerraum Olivenbäume nicht nur zur Ernährung, sondern auch zur Hautpflege, in der Medizin und als Handelsgut. Besonders im antiken Griechenland und Rom war Olivenöl ein zentrales Element – sowohl in der Küche als auch bei religiösen Ritualen. Es galt als Symbol für Wohlstand, Reinheit und Leben.</p>
-    </section>
-
-    <section id="arten" class="info-section">
-      <h3>Olivenölarten</h3>
-      <p>1. <strong>Natives Olivenöl extra</strong>: höchste Qualität, kaltgepresst, unter 0,8 % Säuregehalt<br>
-         2. <strong>Natives Olivenöl</strong>: gute Qualität, ebenfalls kaltgepresst, bis 2 % Säure<br>
-         3. <strong>Olivenöl</strong>: Mischung aus raffiniertem Öl und nativem Öl<br>
-         4. <strong>Rohöl/Lampantöl</strong>: technisch nicht für den menschlichen Verzehr geeignet</p>
-      <p>Je niedriger der Säuregehalt und je naturbelassener das Öl, desto besser die Qualität.</p>
-    </section>
-
-    <section id="vorteile" class="info-section">
-      <h3>Vorteile von Olivenöl</h3>
-      <p>– Reich an einfach ungesättigten Fettsäuren → gut für das Herz-Kreislauf-System<br>
-         – Enthält Polyphenole → antioxidativ, entzündungshemmend<br>
-         – Senkt schlechtes LDL-Cholesterin, erhöht gutes HDL<br>
-         – Unterstützt gesunde Verdauung<br>
-         – Positive Effekte auf Haut, Gelenke und Gehirn<br>
-         – Kann Diabetes- und Krebsrisiko senken laut Studien</p>
-    </section>
-
-    <section id="fake" class="info-section">
-      <h3>Fake-Olivenöl erkennen</h3>
-      <p>Leider sind viele Olivenöle im Supermarkt gestreckt oder falsch deklariert. Achte auf diese Warnsignale:<br>
-         – Extrem niedriger Preis<br>
-         – Vage Herkunft (nur "EU" oder "Mischung aus EU/Nicht-EU")<br>
-         – Kein Erntejahr angegeben<br>
-         – Kein Analysezertifikat oder Siegel (BIO, DOP, PGI)</p>
-      <p>Ein echter Produzent gibt transparent Auskunft über Herkunft, Sorte, Jahrgang, Säurewert und Produktion.</p>
-    </section>
-
-    <section id="gut" class="info-section">
-      <h3>Gutes Olivenöl erkennen</h3>
-      <p><strong>Sensorik:</strong> Fruchtiger Geruch (nach Gras, Tomate, Mandel). Leicht bitterer und pikanter Geschmack – das ist positiv!<br>
-         <strong>Farbe:</strong> zweitrangig. Grünlich oder goldgelb – kein Qualitätsmerkmal allein.<br>
-         <strong>Kältetest:</strong> Bei Kühlschranklagerung wird echtes Olivenöl trüb oder fest.<br>
-         <strong>Transparenz:</strong> Volle Herkunftsangabe, Analysenwerte, ideal: ungefiltert & frisch.</p>
-    </section>
-
-    <section id="konsum" class="info-section">
-      <h3>Wie konsumieren?</h3>
-      <p>– Klassisch über Salate, kalte Vorspeisen oder Dips<br>
-         – Auf Weißbrot mit etwas Salz als Vorspeise<br>
-         – In Joghurt mit Zitrone (türkische & arabische Küche)<br>
-         – Über Gemüsegerichte oder Pasta träufeln<br>
-         – Nicht zu stark erhitzen (bis max. 180 °C), nicht frittieren</p>
-    </section>
+    <section id="product" class="product-info"></section>
+    <div class="buttons" id="buttons"></div>
+    <section id="info" class="info-section"></section>
   </main>
 
   <script>
-    function showSection(id) {
-      document.querySelectorAll('.info-section').forEach(sec => sec.classList.remove('active'));
-      document.getElementById(id).classList.add('active');
+    const content = {
+      de: {
+        title: "NATIVES OLIVENÖL EXTRA – GEMLIK AUS KARACABEY",
+        product: `<h2>Über unser Olivenöl</h2>
+          <p>Dieses hochwertige native Olivenöl extra stammt aus den fruchtbaren Böden von Karacabey (Bursa, Türkei) und wird aus 100 % Gemlik-Oliven gewonnen – einer der edelsten Olivensorten Anatoliens.</p>
+          <p>Mit einem sehr niedrigen Säuregehalt von nur 0,3 % (Ölsäure) und seiner ungefilterten, naturbelassenen Struktur bietet dieses Öl ein intensives, charaktervolles Aroma.</p>
+          <ul>
+            <li>✔ Keine chemische Behandlung</li>
+            <li>✔ Kein Raffinieren</li>
+            <li>✔ Keine Mischung – 100 % sortenrein</li>
+          </ul>
+          <p>Für jeden Liter dieses nativen Olivenöls extra werden nur 4,5 kg frische Oliven aus der ersten Ernte verarbeitet. Das Ergebnis: Der pure Geschmack der Natur – direkt auf Ihrem Teller.</p>`,
+        buttons: [
+          ["Geschichte von Olivenöl", "Olivenöl wurde seit Jahrtausenden ..."],
+          ["Olivenölarten", "Nativ extra, nativ, raffiniert ..."],
+          ["Vorteile von Olivenöl", "Gut für Herz, Haut, Gehirn ..."],
+          ["Fake-Olivenöl erkennen", "Achte auf Preis, Herkunft, Zertifikate ..."],
+          ["Gutes Olivenöl erkennen", "Sensorik, Herkunft, Kältetest ..."],
+          ["Wie konsumieren?", "Kalt über Speisen, in Dips, nicht zu heiß ..."]
+        ]
+      },
+      en: {
+        title: "EXTRA VIRGIN OLIVE OIL – GEMLIK FROM KARACABEY",
+        product: `<h2>About Our Olive Oil</h2><p>This premium extra virgin olive oil ...</p>`,
+        buttons: [
+          ["History of Olive Oil", "Olive oil has been used for thousands of years ..."],
+          ["Types of Olive Oil", "Extra virgin, virgin, refined ..."],
+          ["Health Benefits", "Supports heart, brain, skin ..."],
+          ["How to Spot Fake", "Check price, origin, labels ..."],
+          ["What Makes it Good?", "Taste, smell, origin ..."],
+          ["How to Use", "Cold over food, in dips, avoid overheating ..."]
+        ]
+      },
+      tr: {
+        title: "NATÜREL SIZMA ZEYTİNYAĞI – KARACABEY GEMLİK",
+        product: `<h2>Zeytinyağımız Hakkında</h2><p>Bu yüksek kaliteli naturel sızma ...</p>`,
+        buttons: [
+          ["Zeytinyağının Tarihi", "Binlerce yıllık gelenek ..."],
+          ["Zeytinyağı Çeşitleri", "Naturel sızma, rafine ..."],
+          ["Faydaları", "Kalp, cilt, beyin dostu ..."],
+          ["Sahte Nasıl Anlaşılır?", "Fiyat, etiket, menşei ..."],
+          ["İyi Yağ Nasıl Anlaşılır?", "Tat, koku, şeffaflık ..."],
+          ["Nasıl Tüketilir?", "Çiğ tüketim, kızartma değil ..."]
+        ]
+      },
+      fr: {
+        title: "HUILE D’OLIVE VIERGE EXTRA – GEMLIK DE KARACABEY",
+        product: `<h2>À propos de notre huile</h2><p>Cette huile vierge extra ...</p>`,
+        buttons: [
+          ["Histoire de l'huile d'olive", "Depuis l’Antiquité ..."],
+          ["Types d'huile d'olive", "Vierge extra, raffinée ..."],
+          ["Bienfaits", "Bon pour le cœur, la peau ..."],
+          ["Reconnaître les fausses", "Prix, origine, labels ..."],
+          ["Bonnes caractéristiques", "Goût, odeur, origine ..."],
+          ["Comment consommer", "À cru, en assaisonnement ..."]
+        ]
+      }
+    };
+
+    function setLanguage(lang) {
+      document.getElementById("main-title").innerText = content[lang].title;
+      document.getElementById("product").innerHTML = content[lang].product;
+
+      const buttonsContainer = document.getElementById("buttons");
+      buttonsContainer.innerHTML = "";
+      content[lang].buttons.forEach(([label, text], index) => {
+        const btn = document.createElement("button");
+        btn.innerText = label;
+        btn.onclick = () => showContent(text);
+        buttonsContainer.appendChild(btn);
+      });
+      showContent("");
     }
+
+    function showContent(text) {
+      const section = document.getElementById("info");
+      section.classList.add("active");
+      section.innerHTML = `<p>${text}</p>`;
+    }
+
+    window.onload = () => setLanguage("de");
   </script>
 </body>
 </html>
