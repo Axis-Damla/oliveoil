@@ -351,7 +351,7 @@ nutrition: {
     function showSection(key) {
       const t = translations[currentLang].sections[key];
       sectionTitle.textContent = t[0];
-      sectionText.textContent = t[1];
+      sectionText.innerHTML = t[1];
     }
 
     languageSelector.addEventListener("change", () => {
@@ -369,7 +369,7 @@ nutrition: {
   <div class="content" style="text-align: center; margin-top: 50px;">
     <h2 id="nutrition-title" style="text-align:center;"></h2>
     <img src="nährtwerte.png" id="nutrition-img" alt="" style="display:block;margin:20px auto;max-width:400px;box-shadow:0 0 10px rgba(0,0,0,0.1);border-radius:8px;">
-    
+
     <div class="content" style="text-align: center; margin-top: 50px;">
     <h3 style="text-align:center;">🔥 Kochen mit Olivenöl</h3>
     <p style="text-align:center;">Olivenöl eignet sich nicht nur kalt, sondern auch zum leichten Anbraten – z. B. für hochwertiges Fleisch.</p>
