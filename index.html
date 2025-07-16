@@ -93,6 +93,7 @@ select {
 <body>
   <header>
     <img src="logo.png" alt="Damla Logo" class="logo" />
+    <h1 id="title"></h1>
     <div class="language-select">
       <label for="language">Sprache:</label>
       <select id="language">
@@ -110,6 +111,7 @@ select {
 
   
   <div class="content">
+    <h2 id="about-title"></h2>
     <p id="about-text"></p>
   </div>
 
@@ -123,6 +125,7 @@ select {
   </div>
 
   <div class="section">
+    <h2 id="section-title"></h2>
     <p id="section-text"></p>
   </div>
 
@@ -345,7 +348,6 @@ nutrition: {
     };
 
     const languageSelector = document.getElementById("language");
-    const titleEl = document.getElementById("title");
     const aboutTitle = document.getElementById("about-title");
     const aboutText = document.getElementById("about-text");
     const sectionTitle = document.getElementById("section-title");
